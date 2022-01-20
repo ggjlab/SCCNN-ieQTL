@@ -2,6 +2,7 @@
 SCCNN-ieQTL is an analytical framework for decoding cell type-dependent genetic regulation. It integrates single-cell-based genetic interaction QTLs and CNN predictions to confidently infer genetic regulatory effects as well as the functional variants and effector cell types.
 ## Requirements
 - R packages
+```
 > peer
 > argparser
 > dplyr
@@ -11,8 +12,9 @@ SCCNN-ieQTL is an analytical framework for decoding cell type-dependent genetic 
 > mgcv
 > tidymv
 > splines
-
+```
 - Python packages
+```
 > h5py >= 2.7.0
 > numpy >= 1.14.2
 > pandas == 0.22.0
@@ -23,10 +25,12 @@ SCCNN-ieQTL is an analytical framework for decoding cell type-dependent genetic 
 > torch >= 1.0.0
 > argparse
 > tensorQTL
-
+```
 - Other tools
+```
 > plink
 > liftOver
+```
 ## Input formats
 Four inputs are required for the analyses with SCCNN-ieQTL: genotype and phenotype data of bulk tissue samples, cell type expression profiles and cell type composition files. The pipeline is originally developed based on bulk tissue samples in GTEx and single-cell transcriptome data in HCL. You can download all preprocessed files except genotype data (which are protected and available via dbGaP (accession phs000424.v8)) under the folder named `‘data’`. However, you can also apply the pipeline to any other dataset consistent with the following requirements:
 
@@ -51,13 +55,23 @@ Four inputs are required for the analyses with SCCNN-ieQTL: genotype and phenoty
 		  --run_tissue AdultKidney
 ```
 **Details**
+
 `--bfile_dir`: genotype data of bulk tissue samples in PLINK format.
+
 `--expr_bed_file`: phenotype data of bulk tissue samples in bed format.
+
 `--expression_profile`: cell-type expression profiles from scRNA-seq.
+
 `--deconv_result_dir`: cell-type compositions across bulk tissue samples.
+
 `--output_dir`: SCCNN-ieQTL result directory.
+
 `--celltype_tissue_anno`: the first column is your cell type names, and the second column is the matched tissue names.
+
 `--sample_participant_anno`: the first column is your bulk tissue sample names, and the second column is the matched participant names.
+
 `--run_tissue`: tissue names you choose to run SCCNN-ieQTL.
+
 `--help`: print help info.
+
 
